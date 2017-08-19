@@ -8,4 +8,7 @@
 
 %body
 
-= yield
+	- Category.all.each do |category|
+		= link_to category.name, jobs_path(category: category.name)
+		
+	= yield
